@@ -1,0 +1,113 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Global Styles */
+
+/* Navigation Bar */
+header {
+  position: sticky;
+  background-color: rgb(5, 5, 80);
+  border: none;
+}
+
+nav {
+  
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  height: 60px;
+  width: 100vw;
+}
+
+.logo img {
+  height:250px;
+  margin-left: 10px;
+}
+
+.navigation {
+  list-style :none;
+  display: flex;
+}
+
+.navigation li{
+  font-size: 20px;
+  margin-right: 10px;
+  
+}
+
+.navigation li a {
+  color: #fff;
+  text-decoration: none;
+  padding: 5px 10px;
+}
+
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 0px;
+ 
+}
+/* Sell Section */
+.sell-section {
+  margin-top: 40px;
+}
+
+.sell-form {
+  display: grid;
+  grid-gap: 20px;
+}
+
+.form-group {
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  align-items: center;
+}
+
+label {
+  font-weight: bold;
+}
+
+input[type="text"],
+input[type="tel"],
+select {
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  width: 100%;
+}
+
+.sell-btn {
+  padding: 10px 20px;
+  background-color: rgb(5, 5, 80);
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.sell-btn:hover {
+  background-color: rgb(160, 9, 9);
+}
+
+.sell-btn:focus {
+  outline: none;
+}
+
+/* Footer */
+footer {
+  border: none;
+  color: #fff;
+  background-color: rgb(5, 5, 80);
+  padding: 10px 20px;
+  text-align: center;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+}

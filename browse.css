@@ -1,0 +1,131 @@
+
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+/* Navigation Bar */
+header {
+  position: sticky;
+  background-color: rgb(5, 5, 80);
+  border: none;
+}
+
+nav {
+  
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  height: 60px;
+  width: 100vw;
+}
+
+.logo img {
+  height:250px;
+  margin-left: 10px;
+}
+
+.navigation {
+  list-style :none;
+  display: flex;
+}
+
+.navigation li{
+  font-size: 20px;
+  margin-right: 10px;
+  
+}
+
+.navigation li a {
+  color: white;
+  /* color: #fff; */
+  text-decoration: none;
+  padding: 5px 10px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0px;
+}
+
+.browse-section {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.browse-section h2 {
+  color: #333333;
+  margin-bottom: 20px;
+}
+/* Update .book-grid */
+.book-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Adjust minmax values as needed */
+  gap: 20px;
+}
+
+/* Update .book */
+.book {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  display: flex; /* Ensure book elements do not extend the width of the grid column */
+  flex-direction: column; /* Stack book details vertically */
+  align-items: center; /* Center book content horizontally */
+  text-align: center; /* Center text within the book */
+}
+
+/* Update .book img */
+.book img {
+  max-width: 100%; /* Ensure images do not exceed the width of their container */
+  max-height: 300px; /* Adjust the maximum height as needed */
+  width: auto;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+/* Additional styles for consistency */
+.book h3 {
+  color: #333333;
+  margin: 0; /* Remove default margin */
+}
+
+.book p {
+  color: #777777;
+  margin: 0; /* Remove default margin */
+}
+
+
+.book .chat-btn {
+  display: inline-block;
+  padding: 8px 16px;
+  background-color: #4caf50;
+  color: #ffffff;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.book .chat-btn:hover {
+  background-color: #45a049;
+}
+
+footer {
+  border: none;
+  color: #ccc;
+  background-color: rgb(5, 5, 80);
+  padding: 10px 20px;
+  text-align: center;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+}

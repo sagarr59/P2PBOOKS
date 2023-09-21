@@ -1,0 +1,161 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Global Styles */
+
+/* Navigation Bar */
+header {
+  position: sticky;
+  background-color: rgb(5, 5, 80);
+  border: none;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  height: 60px;
+  width: 100vw;
+}
+
+.logo img {
+  height: 250px;
+  margin-left: 10px;
+}
+
+.navigation {
+  list-style: none;
+  display: flex;
+}
+
+.navigation li {
+  font-size: 20px;
+  margin-right: 10px;
+}
+
+.navigation li a {
+  color: white;
+  text-decoration: none;
+  padding: 5px 10px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Hero Section */
+.hero {
+  background-image: url("img.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 300px 0;
+  text-align: left;
+  color: white;
+}
+
+
+
+.hero span {
+  background-color: rgb(5, 5, 80);
+  font-size: 50px;
+  margin-bottom: 20px;
+  padding: 10px;
+  border-radius: 6px;
+}
+
+.hero p span {
+  background-color: rgb(5, 5, 80);
+  font-size: 30px;
+  margin-bottom: 40px;
+  padding: 10px;
+  border-radius: 6px;
+}
+
+.hero .btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: rgb(5, 5, 80);
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.hero .btn:hover {
+  background-color: rgb(5, 5, 80);
+}
+
+/* Features Section */
+.features {
+  background-image: url("x.png");
+  height: 1000px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: white;
+  position: relative;
+}
+
+.features-content {
+  position: absolute;
+  right: 100px;
+  top: 100px;
+}
+
+.features h2 {
+  color: orange;
+  font-size: 54px;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.feature {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.features a {
+  margin-top: 3rem;
+  border-radius: 1.75rem;
+  background-color: orange;
+  padding: 1.25rem 5rem;
+  text-decoration: none;
+  color: white;
+}
+
+.feature i,
+.step i {
+  font-size: 32px;
+  margin-right: 10px;
+}
+
+.feature h3,
+.step h3 {
+  font-size: 32px;
+  color: orange;
+  margin-bottom: 10px;
+}
+
+.feature p .step p {
+  font-size: 32px;
+}
+
+/* Footer */
+footer {
+  background-color: rgb(5, 5, 80);
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+footer p {
+  font-size: 14px;
+}
