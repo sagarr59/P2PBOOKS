@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SASTOBOOKS - Login</title>
+  <link rel="stylesheet" href="login.css">
+  <style>
+    /* Add this CSS to your existing CSS file */
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: transparent; /* Set background color to transparent */
+      margin: 0;
+      padding: 0;
+    }
+    .background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('login.png'); /* Replace with your image path */
+  background-size: contain;
+  background-repeat: no-repeat;
+  z-index: -1;
+}
+
+
+    .container {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      right: 0;
+      width: 400px; /* Adjust the width as needed */
+      margin-right: 20px; /* Add some margin to the right to separate it from the background */
+      padding: 40px;
+      background-color: #ffffff;
+      border-radius: 4px;
+      /* Your other styling for the container */
+    }
+
+    .logo {
+      display: block;
+      margin: 0 auto;
+      width: 150px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #333333;
+    }
+
+    form {
+      margin-top: 20px;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      font-weight: bold;
+      color: #555555;
+      margin-bottom: 5px;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #cccccc;
+      border-radius: 4px;
+    }
+
+    button[type="submit"] {
+      display: block;
+      width: 100%;
+      padding: 10px;
+      background-color: rgb(5, 5, 80);
+      color: #ffffff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    button[type="submit"]:hover {
+      background-color: rgb(5, 5, 80);
+    }
+
+    p {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    a {
+      color: #007bff;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+
+<body>
+    <div class="background">
+        <img src="login.png" alt="Background Image">
+      </div>
+      
+  <div class="container">
+    <a href="homepage.php"><img src="blacklogo.png" alt="Logo" class="logo"></a>
+    <h1>Login</h1>
+    <form method="POST" action="login.php">
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+      <div class="form-group">
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+      </div>
+      <button type="submit" class="btn" name="button">Login</button>
+    </form>
+    <p>Don't have an account? <a href="signup.php">Sign up</a></p>
+  </div>
+</body>
+
+</html>

@@ -48,23 +48,26 @@ nav {
   padding: 0px;
 }
 
-.browse-section {
+.profile-section {
   background-color: #ffffff;
   padding: 20px;
   border-radius: 5px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-.browse-section h2 {
+.profile-section h2 {
   color: #333333;
   margin-bottom: 20px;
 }
 
 /* Update .book-grid */
 .book-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  display: flex;
+  flex-wrap: nowrap; /* Prevent wrapping to the next row */
+  overflow-x: auto; /* Add horizontal scroll if necessary */
   gap: 20px;
+  padding: 10px; /* Add some padding for spacing */
+  justify-content: flex-start; /* Start from the left */
 }
 
 /* Update .book */
@@ -77,6 +80,7 @@ nav {
   flex-direction: column;
   align-items: center;
   text-align: center;
+  min-width: 250px; /* Ensure each book has a minimum width */
 }
 
 /* Update .book img */
@@ -94,17 +98,16 @@ nav {
   margin: 0;
 }
 
-.book p {
-  color: #777777;
-  margin: 0;
-}
-
-/* Footer */
 footer {
+  border: none;
+  color: #ccc;
   background-color: rgb(5, 5, 80);
-  color: #fff;
-  padding: 20px;
+  padding: 10px 20px;
   text-align: center;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
 }
 
 footer p {

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Simple Chat</title>
+    <!-- Include CSS styles and JavaScript -->
+</head>
+<body>
+    <div id="chat">
+        <div id="chat-messages"></div>
+        <div id="chat-input">
+            <input type="text" id="message" placeholder="Type your message...">
+            <button onclick="sendMessage()">Send</button>
+        </div>
+    </div>
+
+    <script>
+        // Function to fetch messages via AJAX
+        function fetchMessages() {
+            var chatMessages = document.getElementById("chat-messages");
+            var xhr = new XMLHttpRequest();
+
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    chatMessages.innerHTML = xhr.responseText;
+                }
+            };
+
+            xhr.open("GET", "fetch_messages.php", true);
+            xhr.send();
+        }
+
+        // Function to send a message via AJAX
+        function sendMessage() {
+            var message = document.getElementById("message").value;
+            var xhr = new XMLHttpRequest();
+
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    document.getElementById("message").value = "";
+                    fetchMessages();
+                }
+            };
+
+            xhr.open("POST", "send_message.php", true);
+            xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+            xhr.send("sender=John&message=" + encodeURIComponent(message)); // Change 'John' to the sender's name or ID
+        }
+
+        // Initialize chat by fetching messages and setting up periodic fetching
+        fetchMessages();
+        setInterval(fetchMessages, 5000); // Fetch messages every 5 seconds
+    </script>
+</body>
+</html>

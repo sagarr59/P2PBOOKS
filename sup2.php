@@ -1,72 +1,80 @@
-<?php
-session_start();
+<!DOCTYPE html>
+<html>
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-  // Retrieve form data
-  $fullname = $_POST['fullname'];
-  $email = $_POST['email'];
-  $password = $_POST['password'];
-  $confirmPassword = $_POST['confirm-password'];
+<head>
+  <meta charset="UTF-8">
+  <title>SASTOBOOKS - P2P Book Marketplace</title>
+  <link rel="stylesheet" href="homepage.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
 
-  // Perform form validation
-  $error = "";
+<body>
+  <header>
+    <nav>
+      <div class="logo">
+        <a href="homepage.php"><img src="mylogo.png" alt="Logo" class="logo"></a>
+      </div>
+      <ul class="navigation">
+        <li><a href="homepage.php">Home</a></li>
+        <li><a href="browse.php">Browse</a></li>
+        <li><a href="sell.php">Sell</a></li>
+        <?php
+          session_start();
+          if (isset($_SESSION['email'])) {
+            echo '<li><a href="profile.php"><i class="fas fa-user"></i></a></li>'; // User icon linked to profile page
+            echo '<li><a href="logout.php">Logout</a></li>';
+          } else {
+            echo '<li><a href="login.php">Login/Signup</a></li>';
+          }
+        ?>
+      </ul>
+    </nav>
+  </header>
 
-  // Validate full name (at least 2 words)
-  $nameWords = explode(' ', $fullname);
-  if (count($nameWords) < 2) {
-    $error = "Full name should contain at least 2 words.";
-  }
+  <section class="hero">
+    <div class="container">
+      <?php
+        if (isset($_SESSION['fullname'])) {
+          echo '<h1><span>Welcome to SASTOBOOKS , '  . $_SESSION['fullname'] . '!</span></h1>';
+        } else {
+          echo '<h1><span>A P2P Book Marketplace</span></h1>';
+        }
+      ?>
+      <p><span>Buy and sell books with ease</span></p>
+      <br>
+      <a href="browse.php" class="btn">Browse Books</a>
+    </div>
+  </section>
 
-  // Validate password length (minimum 8 characters)
-  if (strlen($password) < 8) {
-    $error = "Password should be at least 8 characters long.";
-  }
+  <section class="features">
+    <div class="features-content">
+      <h2>Features</h2>
+      <div class="feature">
+        <i class="fas fa-search"></i>
+        <h3>Browse Books</h3>
+        <p>Explore a wide range of books available for purchase</p>
+      </div>
+      <div class="feature">
+        <i class="fas fa-dollar-sign"></i>
+        <h3>Sell Books</h3>
+        <p>List your books for sale and reach potential buyers</p>
+      </div>
+      <div class="feature">
+        <i class="fas fa-comments"></i>
+        <h3>Communicate</h3>
+        <p>Connect with other users for book transactions</p>
+      </div>
+      <div class="feature">
+        <a href="./learnmore.html">Learn More</a>
+      </div>
+    </div>
+  </section>
 
-  // Check if password and confirm password match
-  if ($password !== $confirmPassword) {
-    $error = "Password and confirm password do not match.";
-  }
+  <footer>
+    <div class="footer">
+      <p>&copy; 2023 SASTOBOOKS. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
 
-  // Check if there is an error
-  if (!empty($error)) {
-    echo "<script>alert('$error'); window.location.href='signup.html';</script>";
-    exit();
-  } else {
-    // Form data is valid, perform further processing (e.g., database insertion, user authentication)
-
-    // Database connection
-    $servername = "localhost";
-    $username = "root";
-    $pass = "";
-    $database = "login_register";
-
-    // Create connection
-    $conn = new mysqli($servername, $username, $pass, $database);
-
-    // Check connection
-    if ($conn->connect_error) {
-      die("Connection failed: " . $conn->connect_error);
-    }
-
-    // Insert user data into the database
-    $sql = "INSERT INTO users (fullname, email, password) VALUES ('$fullname', '$email', '$password')";
-
-    if ($conn->query($sql) === TRUE) {
-      // User registration successful
-
-      // Perform user authentication (e.g., generate session, set cookies)
-      $_SESSION['email'] = $email;
-      // You can set more session variables as needed
-
-      // Redirect to success page
-      header("Location: homepage.php");
-      exit();
-    } else {
-      // Error in database insertion
-      echo "Error: " . $sql . "<br>" . $conn->error;
-    }
-
-    $conn->close();
-  }
-}
-?>
+</html>

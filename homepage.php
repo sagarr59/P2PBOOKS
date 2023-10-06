@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 
@@ -13,7 +12,7 @@
   <header>
     <nav>
       <div class="logo">
-      <a href="homepage.php"><img src="mylogo.png" alt="Logo" class="logo"></a>
+        <a href="homepage.php"><img src="mylogo.png" alt="Logo" class="logo"></a>
       </div>
       <ul class="navigation">
         <li><a href="homepage.php">Home</a></li>
@@ -22,6 +21,7 @@
         <?php
           session_start();
           if (isset($_SESSION['email'])) {
+            echo '<li><a href="profile.php"><i class="fas fa-user"></i> Profile</a></li>'; // User icon linked to profile page
             echo '<li><a href="logout.php">Logout</a></li>';
           } else {
             echo '<li><a href="login.php">Login/Signup</a></li>';
@@ -30,22 +30,21 @@
       </ul>
     </nav>
   </header>
-  
-  <section class="hero">
-  <div class="container">
-    <?php
-      if (isset($_SESSION['fullname'])) {
-        echo '<h1><span>Welcome to SASTOBOOKS , '  . $_SESSION['fullname'] . '!</span></h1>';
-      } else {
-        echo '<h1><span>A P2P Book Marketplace</span></h1>';
-      }
-    ?>
-    <p><span>Buy and sell books with ease</span></p>
-    <br>
-    <a href="browse.php" class="btn">Browse Books</a>
-  </div>
-</section>
 
+  <section class="hero">
+    <div class="container">
+      <?php
+        if (isset($_SESSION['fullname'])) {
+          echo '<h1><span>Welcome to SASTOBOOKS , '  . $_SESSION['fullname'] . '!</span></h1>';
+        } else {
+          echo '<h1><span>A P2P Book Marketplace</span></h1>';
+        }
+      ?>
+      <p><span>Buy and sell books with ease</span></p>
+      <br>
+      <a href="browse.php" class="btn">Browse Books</a>
+    </div>
+  </section>
 
   <section class="features">
     <div class="features-content">

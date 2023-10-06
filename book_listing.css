@@ -1,0 +1,45 @@
+
+/* Book details section styles */
+.book-details {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.book-left {
+    flex: 1;
+    padding: 20px;
+}
+
+.book-right {
+    flex: 1;
+    padding: 20px;
+}
+
+.book-right h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    font-family: "Arial", sans-serif;
+}
+
+.book-right p {
+    font-size: 18px;
+    font-weight: normal;
+    margin: 10px 0;
+    font-family: "Verdana", sans-serif;
+}
+
+/* Chat button styles */
+.chat-btn {
+    background-color: green;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 16px;
+    margin-top: 20px;
+    cursor: pointer; /* Add a pointer cursor to indicate interactivity */
+}
+

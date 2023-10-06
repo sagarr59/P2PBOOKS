@@ -93,8 +93,9 @@ nav {
 
 /* Features Section */
 .features {
-  background-image: url("x.png");
+  background-image: url("feature.png");
   height: 1000px;
+  opacity: 0.9;
   background-size: cover;
   background-repeat: no-repeat;
   color: white;

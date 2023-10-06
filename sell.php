@@ -67,27 +67,31 @@ $conn->close();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SASTOBOOKS - Sell</title>
     <link rel="stylesheet" href="sell.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
 </head>
 
 <body>
     <header>
-        <nav>
-            <div class="logo">
-              <a href="homepage.php"><img src="mylogo.png" alt="Logo" class="logo"></a>
-            </div>
-            <ul class="navigation">
-              <li><a href="homepage.php">Home</a></li>
-              <li><a href="browse.php">Browse</a></li>
-              <li><a href="sell.php">Sell</a></li>
-              <?php
-              if (isset($_SESSION['fullname'])) {
-                echo '<li><a href="logout.php">Logout</a></li>';
-              } else {
-                echo '<li><a href="login.php">Login/Signup</a></li>';
-              }
-              ?>
-            </ul>
-          </nav>
+    <nav>
+    <div class="logo">
+        <a href="homepage.php"><img src="mylogo.png" alt="Logo" class="logo"></a>
+    </div>
+    <ul class="navigation">
+        <li><a href="homepage.php">Home</a></li>
+        <li><a href="browse.php">Browse</a></li>
+        <li><a href="sell.php">Sell</a></li>
+        <?php
+        if (isset($_SESSION['fullname'])) {
+            echo '<li><a href="profile.php"><i class="fas fa-user"></i> Profile</a></li>'; // Add the profile icon link
+            echo '<li><a href="logout.php">Logout</a></li>';
+        } else {
+            echo '<li><a href="login.php">Login/Signup</a></li>';
+        }
+        ?>
+    </ul>
+</nav>
+
     </header>
     <div class="container">
 
